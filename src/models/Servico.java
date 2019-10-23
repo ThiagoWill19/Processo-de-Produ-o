@@ -18,5 +18,41 @@ public class Servico {
     private Date dataInicio;
     private Date dataTermino;
    
+    public Servico(){
+        
+    }
+
+    public Integer getIdOs() {
+        return idOs;
+    }
+
+    public void setIdOs(Integer idOs) {
+        this.idOs = idOs;
+    }
+
+    public String getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
+    }
+
+    public Date getDataInicio() {
+        return dataInicio;
+    }
+
+    public void setDataInicio(Date dataInicio) {
+        this.dataInicio = dataInicio;
+    }
+
+    public Date getDataTermino() {
+        return dataTermino;
+    }
+
+    public void setDataTermino(Date dataTermino) {
+        this.dataTermino = dataTermino;
+    }
+    
     
 }

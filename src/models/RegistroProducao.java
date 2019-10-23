@@ -18,6 +18,42 @@ public class RegistroProducao {
     private Date inicio;
     private Date termino;
     
+    public RegistroProducao(){
+        
+    }
+
+    public Integer getIdF() {
+        return idF;
+    }
+
+    public void setIdF(Integer idF) {
+        this.idF = idF;
+    }
+
+    public Integer getIdOS() {
+        return idOS;
+    }
+
+    public void setIdOS(Integer idOS) {
+        this.idOS = idOS;
+    }
+
+    public Date getInicio() {
+        return inicio;
+    }
+
+    public void setInicio(Date inicio) {
+        this.inicio = inicio;
+    }
+
+    public Date getTermino() {
+        return termino;
+    }
+
+    public void setTermino(Date termino) {
+        this.termino = termino;
+    }
+    
     
     
 }
