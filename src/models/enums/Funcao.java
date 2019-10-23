@@ -19,6 +19,7 @@ public enum Funcao {
     int cod;
     String funcao;
     
+    
     private Funcao(int cod, String funcao){
         this.cod =  cod;
         this.funcao = funcao;
@@ -40,6 +41,6 @@ public enum Funcao {
         this.funcao = funcao;
     }
     
-
+  
     
 }
