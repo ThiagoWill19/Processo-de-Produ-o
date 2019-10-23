@@ -23,7 +23,7 @@ public class OrdemServico {
     private Integer idUltimoAcesso;
     private List<FuncionarioRelacionado> fr = new ArrayList<>();
     
-    private OrdemServico(){
+    public OrdemServico(){
         
     }
 

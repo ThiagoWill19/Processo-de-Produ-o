@@ -1,8 +1,10 @@
 
 import app.dao.FuncionarioDAO;
+import app.dao.OrdemServicoDAO;
 import java.util.ArrayList;
 import java.util.List;
 import models.Funcionario;
+import models.OrdemServico;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,19 +22,24 @@ public class Teste {
      */
     public static void main(String[] args) {
 
-        Funcionario funcionario = new Funcionario();
-        List<Funcionario> list = new ArrayList<>();
-        FuncionarioDAO f = new FuncionarioDAO();
+        OrdemServico os =  new OrdemServico();
+        List<OrdemServico> list = new ArrayList<>();
+        OrdemServicoDAO dao = new OrdemServicoDAO();
 
         try {
 
-            list = f.findAll();
+            os =  dao.findByName("Itapevi");
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
-        System.out.println(list);
+        System.out.println(os.getId());
+        System.out.println(os.getEmpresa());
+        System.out.println(os.getCliente());
+        System.out.println(os.getProcesso());
+        System.out.println(os.getIdUltimoAcesso());
+        
 
     }
 
