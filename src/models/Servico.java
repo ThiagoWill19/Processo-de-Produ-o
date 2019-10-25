@@ -5,7 +5,10 @@
  */
 package models;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.text.DateFormatter;
+import sun.text.resources.FormatData;
 
 /**
  *
@@ -17,6 +20,7 @@ public class Servico {
     private String empresa;
     private Date dataInicio;
     private Date dataTermino;
+    private final SimpleDateFormat dataFormatada =  new SimpleDateFormat("dd-MM-yyyy HH:MM");
    
     public Servico(){
         
@@ -38,20 +42,27 @@ public class Servico {
         this.empresa = empresa;
     }
 
-    public Date getDataInicio() {
-        return dataInicio;
+    public String getDataInicio() {
+       
+        return  dataFormatada.format(dataInicio);
     }
 
     public void setDataInicio(Date dataInicio) {
         this.dataInicio = dataInicio;
     }
 
-    public Date getDataTermino() {
-        return dataTermino;
+    public String getDataTermino() {
+               
+        return  dataFormatada.format(dataTermino);
     }
 
     public void setDataTermino(Date dataTermino) {
         this.dataTermino = dataTermino;
+    }
+
+    @Override
+    public String toString() {
+        return "Servico{" + "idOs=" + idOs + ", empresa=" + empresa + ", dataInicio=" + dataInicio + ", dataTermino=" + dataTermino + '}';
     }
     
     

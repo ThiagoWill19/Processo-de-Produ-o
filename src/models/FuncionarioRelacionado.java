@@ -5,7 +5,9 @@
  */
 package models;
 
-import javafx.scene.chart.PieChart.Data;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 /**
  *
@@ -16,8 +18,9 @@ public class FuncionarioRelacionado {
 
     private int idFun;
     private String nome;
-    private Data inicio;
-    private Data termino;
+    private Date inicio;
+    private Date termino;
+    private SimpleDateFormat dateF =  new SimpleDateFormat("dd-MM-yyyy HH:MM");
     
     public FuncionarioRelacionado(){
         
@@ -39,20 +42,25 @@ public class FuncionarioRelacionado {
         this.nome = nome;
     }
 
-    public Data getInicio() {
-        return inicio;
+    public String getInicio() {
+        return dateF.format(inicio);
     }
 
-    public void setInicio(Data inicio) {
+    public void setInicio(Date inicio) {
         this.inicio = inicio;
     }
 
-    public Data getTermino() {
-        return termino;
+    public String getTermino() {
+        return dateF.format(termino);
     }
 
-    public void setTermino(Data termino) {
+    public void setTermino(Date termino) {
         this.termino = termino;
+    }
+
+    @Override
+    public String toString() {
+        return "FuncionarioRelacionado{" + "idFun=" + idFun + ", nome=" + nome + ", inicio=" + inicio + ", termino=" + termino + ", dateF=" + dateF + '}'+"\n";
     }
     
     

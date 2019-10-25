@@ -19,9 +19,9 @@ import models.enums.Funcao;
  */
 public class FuncionarioDAO {
 
-    PreparedStatement stmt = null;
-    ResultSet rs = null;
-    Connection conn = null;
+    private PreparedStatement stmt = null;
+    private ResultSet rs = null;
+    private Connection conn = null;
 
     private final String LIST = "SELECT * FROM funcionario";
     private final String LISTBYID = "SELECT * FROM funcionario WHERE id = ?";
