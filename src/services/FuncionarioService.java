@@ -67,7 +67,7 @@ public class FuncionarioService {
             f = funcionarioDao.findByName(name);
             return f;
         } catch (Exception e) {
-            System.out.println("Erro ao buscar Funcionario n°"+ name +"  ERRO: "+e.getMessage());
+            System.out.println("Erro ao buscar Funcionario: "+ name +"  ERRO: "+e.getMessage());
         }
         return null;
     }

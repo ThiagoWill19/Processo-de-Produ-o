@@ -97,7 +97,7 @@ public class OrdemServicoDAO {
         
     }
 
-     public OrdemServico findBName(String name) throws Exception{
+     public OrdemServico findByName(String name) throws Exception{
         
         OrdemServico os =  new OrdemServico();
         conn = ModuloConexao.connector();
