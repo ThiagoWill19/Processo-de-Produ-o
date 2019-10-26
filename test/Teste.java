@@ -1,15 +1,14 @@
 
-import app.dao.FuncionarioDAO;
-import app.dao.FuncionarioRelacionadoDAO;
-import app.dao.OrdemServicoDAO;
-import app.dao.ServicoDAO;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import models.FuncionarioRelacionado;
-import models.OrdemServico;
-import models.Servico;
+
+import app.dao.RegistroProducaoDAO;
+
+
+import java.sql.Date;
+
+
+import models.RegistroProducao;
+
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -26,21 +25,22 @@ public class Teste {
      * @param args the command line arguments
      */
     public static void main(String[] args)  {
-
-        OrdemServico os =  new OrdemServico();
-        List<FuncionarioRelacionado> list = new ArrayList<>();
-        FuncionarioRelacionadoDAO dao =  new FuncionarioRelacionadoDAO();
-
-        try {
-            list =  dao.findById(1);
-        } catch (Exception ex) {
-            ex.getMessage();
-        }
         
-        System.out.println(list);
+        RegistroProducao rp =  new RegistroProducao();
+        RegistroProducaoDAO rpd = new RegistroProducaoDAO();
+
+        /*
+        rp.setIdF(1);
+        rp.setIdOS(1);
+        rp.setInicio(Date.valueOf(LocalDate.now()));
+        rp.setTermino(Date.valueOf(LocalDate.now()));
+        */
         
         
-
+        
+        System.out.println(rpd.update(1, 1, (Date)Date.valueOf("2019-10-30")));
+      
+        
     }
 
 }
