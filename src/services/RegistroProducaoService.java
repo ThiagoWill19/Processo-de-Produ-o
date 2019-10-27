@@ -14,24 +14,27 @@ import models.RegistroProducao;
  * @author thiago
  */
 public class RegistroProducaoService {
-    
-    
+
     private RegistroProducaoDAO rpd = new RegistroProducaoDAO();
 
-    
-    public boolean insert(RegistroProducao rp){
-        
-        if(rpd.insert(rp))return true;
-        else return false;
-        
-        
+    public boolean insert(RegistroProducao rp) {
+
+        if (rpd.insert(rp)) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
-    
-    public boolean update(int idFun, int idOrdem, Date dataTermino){
-        
-        if(rpd.update(idFun, idOrdem, dataTermino)) return true;
-        else return false;
-        
+
+    public boolean update(int idFun, int idOrdem, Date dataTermino) {
+
+        if (rpd.update(idFun, idOrdem, dataTermino)) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
-    
+
 }

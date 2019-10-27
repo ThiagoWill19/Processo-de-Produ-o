@@ -5,7 +5,6 @@
  */
 package services;
 
-
 import java.sql.Date;
 import java.time.LocalDate;
 import models.Funcionario;
@@ -28,14 +27,14 @@ public class Registradora {
 
         Funcionario funcionario = new Funcionario();
         OrdemServico os = new OrdemServico();
-
+        
         funcionario = fs.findById(idFun);
 
-        if (funcionario != null) {
+        if (funcionario.getId() != null) {
 
             os = osService.findById(idOrdem);
 
-            if (os != null) {
+            if (os.getId()!= null) {
 
                 if (!os.isStatus()) {
 
@@ -109,15 +108,14 @@ public class Registradora {
 
     }
 
+    //Identifica a função, finaliza a etapa do processo, se algo der errado retorna false;
     public boolean closeProcess(Funcionario f, OrdemServico os) {
-        
+
         RegistroProducao rp = new RegistroProducao();
         RegistroProducaoService rpService = new RegistroProducaoService();
-        OrdemServicoService osSetvice =  new OrdemServicoService();
-        
-        if (os.getIdUltimoAcesso() == f.getId()) {
+        OrdemServicoService osSetvice = new OrdemServicoService();
 
-            
+        if (os.getIdUltimoAcesso() == f.getId()) {
 
             switch (f.getFuncao()) {
                 case SERRADOR:
@@ -135,28 +133,29 @@ public class Registradora {
                 default:
                     os.setProcesso("Não foi possivel localizar o processo!");
             }
-            
+
             os.setStatus(false);
-            
-            if(osSetvice.update(os)){
-                
+
+            if (osSetvice.update(os)) {
+
                 rp.setIdF(f.getId());
                 rp.setIdOS(os.getId());
                 rp.setTermino(Date.valueOf(LocalDate.now()));
-                
-                if(rpService.update(rp.getIdF(), rp.getIdOS(), rp.getTermino())){
+
+                if (rpService.update(rp.getIdF(), rp.getIdOS(), rp.getTermino())) {
                     return true;
-                    
-                }else return false;
-                
-            }return false;
+
+                } else {
+                    return false;
+                }
+
+            }
+            return false;
 
         } else {
             return false;
         }
 
     }
-    
-    
-    
+
 }
