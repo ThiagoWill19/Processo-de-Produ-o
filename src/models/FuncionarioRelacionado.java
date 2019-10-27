@@ -60,7 +60,7 @@ public class FuncionarioRelacionado {
 
     @Override
     public String toString() {
-        return "FuncionarioRelacionado{" + "idFun=" + idFun + ", nome=" + nome + ", inicio=" + inicio + ", termino=" + termino + ", dateF=" + dateF + '}'+"\n";
+        return "FuncionarioRelacionado{" + "idFun=" + idFun + ", nome=" + nome + ", inicio=" + inicio + ", termino=" + termino + '}'+"\n";
     }
     
     

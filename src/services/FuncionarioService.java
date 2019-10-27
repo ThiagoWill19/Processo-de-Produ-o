@@ -44,16 +44,17 @@ public class FuncionarioService {
     public Funcionario findById(int id){
         
         Funcionario f =  new Funcionario();
-        
+        f = null;
         try {
             f = funcionarioDao.findById(id);
-             return f;
+            return f;
+            
         } catch (Exception e) {
             
-            System.out.println("Erro ao buscar Funcionario n°"+ id+"  ERRO: "+e.getMessage());
+            System.out.println("Erro ao buscar Funcionario n°"+ id+"  ERRO: ");
         }
         
-        return null;
+        return f;
         
     }
     

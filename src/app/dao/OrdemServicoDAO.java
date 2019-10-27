@@ -25,6 +25,7 @@ public class OrdemServicoDAO {
     private final String LIST = "SELECT * FROM ordemservico";
     private final String LISTBYID = "SELECT * FROM ordemservico WHERE id = ?";
     private final String LISTBYNAME = "SELECT * FROM ordemservico WHERE empresa = ?";
+    private final String UPDATE = "UPDATE ordemservico SET status = ?, id_ultimoAcesso = ?, processo = ? WHERE id = ?";
 
     
     
@@ -83,7 +84,8 @@ public class OrdemServicoDAO {
                     os.setEmpresa(rs.getString(2));
                     os.setCliente(rs.getString(3));
                     os.setProcesso(rs.getString(4));
-                    os.setIdUltimoAcesso(rs.getInt(5));
+                    os.setStatus(rs.getBoolean(5));
+                    os.setIdUltimoAcesso(rs.getInt(6));
                     
                 }
                 
@@ -91,6 +93,7 @@ public class OrdemServicoDAO {
                 
             } catch (Exception e) {
                 throw new Exception(e.getMessage());
+                
             }
             
         }else return null;
@@ -128,5 +131,31 @@ public class OrdemServicoDAO {
         }else return null;
         
     }
+     
+     public boolean update(OrdemServico os)throws Exception{
+         
+         conn = ModuloConexao.connector();
+         
+         if(conn != null){
+             
+             try {
+                 
+                 stmt =  conn.prepareStatement(UPDATE);
+                 if(os.isStatus() == true) stmt.setBoolean(1, true);
+                 else stmt.setBoolean(1, false);
+                 stmt.setInt(2, os.getIdUltimoAcesso());
+                 stmt.setString(3, os.getProcesso());
+                 stmt.setInt(4, os.getId());
+                 
+                 stmt.execute();
+                 return true;
+                 
+             } catch (Exception e) {
+                 throw new Exception(e.getMessage());
+             }
+             
+         } return false;
+         
+     }
     
 }

@@ -71,6 +71,17 @@ public class OrdemServicoService {
         return null;
     }
     
-    
+    public boolean update(OrdemServico os){
+        
+        try {
+            if(ordemServicoDao.update(os)) return true;
+            else return false;
+            
+        } catch (Exception e) {
+            System.out.println("Erro ao fazer update de O.S de Id: "+os.getId()+"  Erro: "+e.getMessage());
+        }
+     
+        return false;
+    }
     
 }

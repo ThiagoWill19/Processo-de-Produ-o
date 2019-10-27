@@ -71,7 +71,7 @@ public class FuncionarioDAO {
         if (conn != null) {
             try {
                 stmt = conn.prepareStatement(LISTBYID);
-                stmt.setString(1, id + "");
+                stmt.setInt(1, id );
                 rs = stmt.executeQuery();
 
                 while (rs.next()) {

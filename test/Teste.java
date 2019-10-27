@@ -4,9 +4,17 @@ import app.dao.RegistroProducaoDAO;
 
 
 import java.sql.Date;
+import models.Funcionario;
+import models.FuncionarioRelacionado;
+import models.OrdemServico;
 
 
 import models.RegistroProducao;
+import services.FuncionarioRelacionadoService;
+import services.FuncionarioService;
+import services.OrdemServicoService;
+import services.Registradora;
+import services.ServicoService;
 
 
 
@@ -26,19 +34,19 @@ public class Teste {
      */
     public static void main(String[] args)  {
         
-        RegistroProducao rp =  new RegistroProducao();
-        RegistroProducaoDAO rpd = new RegistroProducaoDAO();
-
-        /*
-        rp.setIdF(1);
-        rp.setIdOS(1);
-        rp.setInicio(Date.valueOf(LocalDate.now()));
-        rp.setTermino(Date.valueOf(LocalDate.now()));
-        */
+    
+        Registradora r =  new Registradora();
+        System.out.println(r.apertureChecker(2, 1));
         
+       
+       
+        OrdemServico os =  new OrdemServico();
+        OrdemServicoService oss = new OrdemServicoService();
+        FuncionarioRelacionadoService frs = new FuncionarioRelacionadoService();
+        os = oss.findById(1);
+        os.setFr(frs.findById(os.getId()));
+        System.out.println(os.getFr());
         
-        
-        System.out.println(rpd.update(1, 1, (Date)Date.valueOf("2019-10-30")));
       
         
     }

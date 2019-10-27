@@ -5,10 +5,33 @@
  */
 package services;
 
+import app.dao.RegistroProducaoDAO;
+import java.sql.Date;
+import models.RegistroProducao;
+
 /**
  *
  * @author thiago
  */
-public enum RegistroProducaoService {
+public class RegistroProducaoService {
+    
+    
+    private RegistroProducaoDAO rpd = new RegistroProducaoDAO();
+
+    
+    public boolean insert(RegistroProducao rp){
+        
+        if(rpd.insert(rp))return true;
+        else return false;
+        
+        
+    }
+    
+    public boolean update(int idFun, int idOrdem, Date dataTermino){
+        
+        if(rpd.update(idFun, idOrdem, dataTermino)) return true;
+        else return false;
+        
+    }
     
 }
