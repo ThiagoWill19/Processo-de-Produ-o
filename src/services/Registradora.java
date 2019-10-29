@@ -60,6 +60,8 @@ public class Registradora {
 
     }
 
+    
+    
     public boolean openProcess(Funcionario f, OrdemServico os) {
 
         OrdemServicoService osService = new OrdemServicoService();
@@ -108,6 +110,8 @@ public class Registradora {
 
     }
 
+    
+    
     //Identifica a função, finaliza a etapa do processo, se algo der errado retorna false;
     public boolean closeProcess(Funcionario f, OrdemServico os) {
 

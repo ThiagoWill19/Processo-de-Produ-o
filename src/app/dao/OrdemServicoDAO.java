@@ -49,7 +49,8 @@ public class OrdemServicoDAO {
                     os.setEmpresa(rs.getString(2));
                     os.setCliente(rs.getString(3));
                     os.setProcesso(rs.getString(4));
-                    os.setIdUltimoAcesso(rs.getInt(5));
+                    os.setStatus(rs.getBoolean(5));
+                    os.setIdUltimoAcesso(rs.getInt(6));
                     
                     list.add(os);
                 }

@@ -60,7 +60,7 @@ public class Servico {
 
     @Override
     public String toString() {
-        return "Servico{" + "idOs=" + idOs + ", empresa=" + empresa + ", dataInicio=" + dataInicio + ", dataTermino=" + dataTermino + '}';
+        return "Servico{" + "idOs=" + idOs + ", empresa=" + empresa + ", dataInicio=" + dataInicio + ", dataTermino=" + dataTermino + '}'+"\n";
     }
     
     

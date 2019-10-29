@@ -8,8 +8,10 @@ import models.FuncionarioRelacionado;
 import models.OrdemServico;
 
 import models.RegistroProducao;
+import models.Servico;
 import services.FuncionarioRelacionadoService;
 import services.FuncionarioService;
+import services.GerenciadoraOS;
 import services.OrdemServicoService;
 import services.Registradora;
 import services.ServicoService;
@@ -29,32 +31,12 @@ public class Teste {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+         
+        
+        GerenciadoraOS gos =  new GerenciadoraOS();
+        System.out.println(gos.buscarPorId(1));
+         
 
-        Registradora r = new Registradora();
-        Scanner scann = new Scanner(System.in);
-        String status = "";
-        int idFun, nOS;
-
-        while (true) {
-            System.out.println("------PROCESSO DE PRODUÇÃO MATRIZBRASIL------");
-            System.out.println("\n\n");
-            System.out.print("ID Funcionário: ");
-            idFun = scann.nextInt();
-            System.out.print("N° O.S: ");
-            nOS = scann.nextInt();
-
-            try {
-               status = r.apertureChecker(idFun, nOS); 
-            } catch (java.lang.NullPointerException e) {
-                System.out.println(e);
-            }
-            
-
-            System.out.println("\n");
-            System.out.println(status);
-            System.out.println("\n\n\n");
-
-        }
 
     }
 
