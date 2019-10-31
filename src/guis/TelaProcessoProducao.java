@@ -33,7 +33,7 @@ public class TelaProcessoProducao extends javax.swing.JFrame {
         txtArea = new javax.swing.JTextArea();
         btOK = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Processo de Produção");
         setResizable(false);
 
@@ -96,36 +96,6 @@ public class TelaProcessoProducao extends javax.swing.JFrame {
        processar();
     }//GEN-LAST:event_btOKActionPerformed
 
-
-    public static void main(String args[]) {
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaProcessoProducao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaProcessoProducao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaProcessoProducao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaProcessoProducao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        
-
-        
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaProcessoProducao().setVisible(true);
-            }
-        });
-    }
-    
-    
-    
     public void processar(){
         
         String status = "";
